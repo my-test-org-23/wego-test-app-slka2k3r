@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-nginx-esj9nt
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-esj9nt
+  namespace: my-nginx-esj9nt
+  labels:
+    name: nginx-esj9nt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-esj9nt
+  template:
+    metadata:
+      namespace: my-nginx-esj9nt
+      labels:
+        name: nginx-esj9nt
+    spec:
+      containers:
+      - name: nginx-esj9nt
+        image: nginx
+        ports:
+        - containerPort: 80
+
