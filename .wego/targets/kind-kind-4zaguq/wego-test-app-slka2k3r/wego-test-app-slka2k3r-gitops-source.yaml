@@ -1,0 +1,12 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: wego-test-app-slka2k3r
+  namespace: wego-system
+spec:
+  interval: 30s
+  ref:
+    branch: main
+  url: https://github.com/my-test-org-23/wego-test-app-slka2k3r.git
+
